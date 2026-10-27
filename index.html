@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kárita Santana | Assessoria e Perícia</title>
+<meta name="description" content="Perícia judicial e extrajudicial, contabilidade, economia e direito. Direito bancário, consumidor, civil e trabalho.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('ld')</script>
+<style>
+:root{
+  --bg:#0f0f0f; --bg2:#121212; --card:#171717; --line:rgba(255,255,255,.1);
+  --teal:#2aa9a6; --teal-d:#0f4c4a; --gold:#d9a441; --text:#fff; --muted:#a8aaab;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif; --serif:"Cormorant Garamond",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.8 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+section{position:relative}
+.pad{padding:120px 0}
+.sub{display:block;color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.h2{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:600;line-height:1.15;text-transform:uppercase}
+.h2 .l,.light{font-weight:200}
+.acc{color:var(--gold)}
+.muted{color:var(--muted)}
+
+/* palavras que sobem */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.w > .i{display:inline-block;will-change:transform}
+
+/* botões */
+.butn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 35px;border:1px solid rgba(255,255,255,.7);border-radius:30px;font-weight:500;overflow:hidden;transition:color .35s,border-color .35s;isolation:isolate}
+.butn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .4s cubic-bezier(.7,0,.2,1);z-index:-1;border-radius:inherit}
+.butn:hover{color:#111;border-color:var(--gold)}
+.butn:hover::before{transform:none}
+.butn.fill{background:var(--gold);border-color:var(--gold);color:#111}
+.butn.fill::before{background:#fff}
+.butn.sm{padding:9px 24px;font-size:.9rem}
+
+/* abertura: cortina com borda curva */
+.loader{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;overflow:hidden}
+.ld .loader{display:flex}
+.ld body{overflow:hidden}
+.loader svg{position:absolute;top:0;left:0;width:100vw;height:110vh;fill:#121212}
+.loader .in{position:relative;z-index:2;text-align:center}
+.loader .in img{width:min(210px,56vw);margin:0 auto 34px;animation:pulsa 1.6s ease-in-out infinite alternate}
+.loader .txt{font-size:.85rem;font-weight:300;letter-spacing:.9em;margin-right:-.9em;text-transform:uppercase;color:#cfd0d0}
+.loader .txt span{animation:pulsa 1s ease-in-out infinite alternate}
+@keyframes pulsa{from{opacity:1}to{opacity:.15}}
+
+/* cursor */
+.cursor{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:100;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .25s,height .25s;display:none}
+.cursor.big{width:54px;height:54px}
+@media(hover:hover) and (pointer:fine){.cursor{display:block}}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,transform .4s}
+.nav.sc{background:rgba(15,15,15,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px;transition:height .3s}
+.nav.sc .wrap{height:64px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:52px;width:auto;transition:height .3s}
+.nav.sc .logo img{height:44px}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{font-size:.92rem;font-weight:500;color:#d6d6d6;transition:color .2s}
+.nav ul a:hover{color:var(--gold)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;position:relative}
+.burger i{position:absolute;left:8px;right:8px;height:2px;background:#fff;transition:.3s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:25px}
+.menu-open .burger i:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){top:20px;transform:rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:40;background:var(--bg);display:grid;place-content:center;gap:18px;text-align:center;font-size:2rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .35s}
+.menu-open .menu{opacity:1;pointer-events:auto}
+.nav .butn{display:inline-flex}
+@media(max-width:900px){.nav ul,.nav .butn{display:none}.burger{display:block}}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-18%;top:-22%;width:70vw;height:70vw;max-width:900px;max-height:900px;border-radius:50%;background:radial-gradient(circle,rgba(42,169,166,.5),transparent 62%);animation:glow 8s ease-in-out infinite alternate;pointer-events:none}
+@keyframes glow{to{transform:translate(6%,8%) scale(1.15);opacity:.75}}
+.hero-photo{position:absolute;inset:0;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 18%,#000 62%);mask-image:linear-gradient(to right,transparent 18%,#000 62%)}
+.hero-photo picture{display:contents}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:72% 53%;filter:grayscale(1) contrast(1.1) brightness(.95)}
+.hero-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,var(--bg) 0,transparent 22%),linear-gradient(to bottom,var(--bg) 0,transparent 16%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-in{max-width:620px}
+.hello{display:flex;align-items:center;gap:14px;font-size:1.15rem;font-weight:600;margin-bottom:16px}
+.hello .wave{font-size:2rem;display:inline-block;animation:wave 2.2s ease-in-out infinite;transform-origin:70% 70%}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(8deg)}}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:600;line-height:1.08;margin-bottom:10px}
+.hero h3{font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:600;margin-bottom:22px;line-height:1.35}
+.hero p{color:#d0d1d1;max-width:480px;margin-bottom:38px}
+.hero .row{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.arrow{width:64px;height:64px;stroke:rgba(255,255,255,.35);fill:none;stroke-width:1.4;animation:desce 2.2s ease-in-out infinite}
+@keyframes desce{50%{transform:translateY(10px)}}
+@media(max-width:900px){
+  .hero{align-items:flex-end}
+  .hero{padding-top:470px}
+  .hero-photo{inset:64px 0 auto 0;height:520px;-webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent);mask-image:linear-gradient(to bottom,#000 60%,transparent)}
+  .hero-photo img{object-position:50% 4%}
+  .hero-photo::after{display:none}
+  .hero p{text-shadow:0 2px 14px #000}
+  .arrow{display:none}
+}
+
+/* faixa */
+.marq{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:6px 0;white-space:nowrap}
+.marq .track{display:inline-flex;align-items:center}
+.marq span{font-size:.5rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#8d9091;padding:0 16px;line-height:1}
+.marq i{width:3px;height:3px;flex:none;background:var(--gold);transform:rotate(45deg)}
+
+/* sobre */
+.about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--card)}
+.frame img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;object-position:50% 22%;filter:grayscale(1) contrast(1.06);transition:filter .6s}
+.frame:hover img{filter:none}
+.duo2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.duo2 img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.05);transition:filter .6s}
+.duo2 img:hover{filter:none}
+.frame-wrap{max-width:460px;margin-inline:auto;width:100%}
+.about p{color:var(--muted);margin-top:22px;max-width:560px}
+.about blockquote{margin:30px 0 6px;padding-left:22px;border-left:2px solid var(--gold);font:italic 400 1.7rem/1.3 var(--serif);color:#fff;max-width:520px}
+.stats{display:flex;gap:56px;margin:44px 0 40px;flex-wrap:wrap}
+.stats b{display:block;font-size:3.2rem;font-weight:600;line-height:1;color:#fff}
+.stats span{display:block;font-size:.8rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
+@media(max-width:900px){.about .wrap{grid-template-columns:1fr;gap:70px}.pad{padding:90px 0}}
+
+/* áreas: cards empilhados */
+.areas{background:var(--bg2);border-block:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:70px;flex-wrap:wrap}
+.stack{position:relative}
+.wc{position:sticky;top:calc(92px + var(--i)*16px);margin-bottom:44px}
+.wc-in{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:44px;min-height:420px;transform-origin:50% 0;will-change:transform}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tags span{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:5px 14px;color:#cfd0d0}
+.wc h3{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:600;line-height:1.15;margin-bottom:16px}
+.wc p{color:var(--muted);max-width:44ch}
+.wc ul{list-style:none;margin:20px 0 30px}
+.wc li{padding:5px 0 5px 22px;position:relative;color:#d6d6d6;font-size:.95rem}
+.wc li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:1px;background:var(--gold)}
+.more{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+.more i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-style:normal;transition:.3s}
+.more:hover i{background:var(--gold);color:#111;transform:rotate(45deg)}
+.vis{border-radius:20px;position:relative;overflow:hidden;display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 20%,rgba(42,169,166,.55),transparent 60%),radial-gradient(circle at 80% 90%,rgba(217,164,65,.35),transparent 55%),#0c1a1a}
+.vis svg{width:58%;max-width:250px;fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.vis::after{content:"";position:absolute;width:140%;aspect-ratio:1;border:1px solid rgba(255,255,255,.08);border-radius:50%;animation:gira 40s linear infinite}
+.vis::before{content:"";position:absolute;width:90%;aspect-ratio:1;border:1px dashed rgba(217,164,65,.25);border-radius:50%;animation:gira 28s linear infinite reverse}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media(max-width:860px){.wc{position:relative;top:0}.wc-in{grid-template-columns:1fr;padding:28px}.vis{min-height:220px;order:-1}}
+
+/* processo */
+.step{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:30px;align-items:start;padding:44px 0;position:relative}
+.step .ln{position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform-origin:left}
+.step::before{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--line)}
+.step .ln{z-index:1}
+.step .n{font-size:3rem;font-weight:200;color:transparent;-webkit-text-stroke:1px var(--gold);line-height:1}
+.step h3{font-size:1.6rem;font-weight:600;line-height:1.2}
+.step p{color:var(--muted)}
+.steps-top{border-top:1px solid var(--line);margin-top:60px}
+@media(max-width:760px){.step{grid-template-columns:60px 1fr;gap:14px}.step p{grid-column:2}}
+
+/* perícia: papéis */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.role{border:1px solid var(--line);border-radius:24px;padding:34px;background:var(--card);transition:border-color .3s,transform .4s}
+.role:hover{border-color:var(--gold);transform:translateY(-6px)}
+.role small{display:block;color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.role h3{font-size:1.5rem;font-weight:600;line-height:1.25;margin-bottom:12px}
+.role p{color:var(--muted);font-size:.95rem}
+@media(max-width:900px){.roles{grid-template-columns:1fr}}
+
+/* quando buscar + documentos */
+.need .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
+.checks{list-style:none;margin-top:36px}
+.checks li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);color:#d6d6d6}
+.checks li::before{content:"";flex:none;width:11px;height:11px;margin-top:9px;background:var(--gold);transform:rotate(45deg)}
+.docs{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px;align-self:start}
+.docs h3{font-size:1.6rem;font-weight:600;margin-bottom:8px}
+.docs p{color:var(--muted)}
+.docs ul{list-style:none;margin:22px 0 28px}
+.docs li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.docs li span{color:var(--gold);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.need .wrap > *{min-width:0}
+@media(max-width:900px){.need .wrap{grid-template-columns:minmax(0,1fr);gap:50px}.docs{padding:28px}}
+
+/* dúvidas */
+.faq .body{display:block;max-width:70ch}
+.faq .body p+p{margin-top:10px}
+
+/* aparelhos */
+.respo{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden}
+.respo .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.devices{position:relative;height:560px}
+.dev{position:absolute}
+.d1{left:-3%;top:6%;width:74%}
+.d2{left:60%;top:12%;width:30%}
+.tablet{aspect-ratio:4/3;background:#0a0a0a;border:3px solid #d4d4d4;border-radius:26px;padding:12px;
+  box-shadow:0 40px 80px rgba(0,0,0,.7),inset 0 0 0 2px #000;transform:perspective(1300px) rotateY(16deg) rotateX(7deg) rotateZ(-7deg)}
+.phone{aspect-ratio:9/19;background:#000;border:5px solid #1b1b1b;border-radius:30px;padding:7px;
+  box-shadow:0 30px 70px rgba(0,0,0,.75),0 0 0 1px #3a3a3a;transform:perspective(1100px) rotateY(-10deg) rotateZ(-4deg)}
+.phone::before{content:"";position:absolute;top:10px;left:50%;width:34%;height:9px;border-radius:9px;background:#000;transform:translateX(-50%);z-index:3}
+.scr{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;background:#0f0f0f;container-type:inline-size}
+.phone .scr{border-radius:22px}
+.scr::before{content:"";position:absolute;left:-25%;top:-30%;width:90%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(42,169,166,.5),transparent 62%)}
+.scr .ph{position:absolute;right:0;bottom:0;width:58%;height:100%}
+.scr .ph img{width:100%;height:100%;object-fit:cover;object-position:60% 22%;filter:grayscale(1) brightness(.9);
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 50%),linear-gradient(to top,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 50%),linear-gradient(to top,transparent,#000 18%);mask-composite:intersect}
+.scr .tx{position:absolute;left:6%;top:9%;right:40%;z-index:2}
+.scr .lg{height:7cqw;width:auto;margin-bottom:9cqw}
+.scr small{display:block;font-size:3.2cqw;font-weight:600;margin-bottom:2cqw}
+.scr h4{font-size:8.2cqw;font-weight:600;line-height:1.1;margin-bottom:3cqw}
+.scr h4 b{color:var(--gold);font-weight:600}
+.scr p{font-size:2.9cqw;line-height:1.5;color:#c9c9c9;margin-bottom:4cqw}
+.scr .bt{display:inline-block;font-size:2.8cqw;font-weight:500;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:1.4cqw 4cqw}
+.scr .bar{position:absolute;left:0;right:0;bottom:0;padding:3cqw 5cqw;font-size:3.4cqw;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#cfd0d0;background:rgba(18,18,18,.92);border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;z-index:2}
+.phone .scr .tx{right:8%;top:11%}
+.phone .scr .ph{width:100%;height:62%}
+.phone .scr h4{font-size:11cqw}.phone .scr small{font-size:5cqw}.phone .scr .lg{height:9cqw;margin-bottom:12cqw}
+.phone .scr .bt{font-size:4.6cqw;padding:2cqw 7cqw}
+.scr .pad2{position:absolute;inset:0;padding:6cqw;z-index:2}
+.scr .pad2 .lg{height:6cqw;margin-bottom:6cqw}
+.scr .pad2 h4{font-size:7cqw;margin-bottom:4cqw}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.mini div{background:#171717;border:1px solid rgba(255,255,255,.1);border-radius:2cqw;padding:3cqw}
+.mini i{display:block;width:5cqw;height:.5cqw;background:var(--gold);margin-bottom:2cqw}
+.mini b{display:block;font-size:3.4cqw;font-weight:600;margin-bottom:1cqw}
+.mini span{display:block;font-size:2.5cqw;line-height:1.4;color:#a8aaab}
+.feed{display:grid;gap:3cqw}
+.feed div{position:relative;border-radius:3cqw;overflow:hidden;aspect-ratio:16/10}
+.feed img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.feed b{position:absolute;left:0;right:0;bottom:0;padding:8cqw 4cqw 3cqw;font-size:4.4cqw;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.phone .scr .pad2{padding:7cqw}
+.phone .scr .pad2 .lg{height:8cqw;margin:5cqw 0 6cqw}
+.phone .scr .pad2 h4{font-size:9cqw}
+.respo .h2{text-transform:none;font-size:clamp(2.2rem,4.4vw,3.6rem);max-width:15ch}
+.respo p{color:var(--muted);margin:26px 0 34px;max-width:46ch}
+@media(max-width:900px){.respo .wrap{grid-template-columns:1fr}.devices{height:420px;order:2}.d1{left:0;width:72%}.d2{left:62%;width:34%}}
+
+/* instagram */
+.insta{background:var(--bg2);border-top:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.post{display:block}
+.post .img{aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:var(--card);margin-bottom:20px;position:relative}
+.post img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.post:hover img{transform:scale(1.07)}
+.post .tag{position:absolute;left:16px;top:16px;background:rgba(15,15,15,.75);backdrop-filter:blur(8px);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:30px}
+.post small{color:var(--gold);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.post h3{font-size:1.35rem;font-weight:600;line-height:1.3;margin:8px 0 10px}
+.post p{color:var(--muted);font-size:.95rem}
+@media(max-width:900px){.cards{grid-template-columns:1fr;max-width:460px;margin-inline:auto}.post .img{aspect-ratio:9/14}}
+
+/* chamada final */
+.call{padding:90px 0 90px;overflow:hidden;text-align:center}
+.call .rows{margin-bottom:40px}
+.call .track{display:inline-flex;align-items:center;white-space:nowrap}
+.call .row-m{overflow:hidden;white-space:nowrap}
+.call .big{font-size:clamp(1.8rem,4.2vw,3.4rem);font-weight:600;line-height:1.1;padding:0 24px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.55);text-transform:uppercase}
+.call .big.s{color:#fff;-webkit-text-stroke:0}
+.call i.d{width:10px;height:10px;flex:none;background:var(--gold);transform:rotate(45deg)}
+.call .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* rodapé */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:80px 0 34px}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px}
+.yra{color:var(--gold);font-weight:600;transition:color .2s}
+.yra:hover{color:#fff}
+.flogo{width:min(190px,100%);height:auto}
+footer h4{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+footer li{list-style:none;padding:4px 0}
+footer li a{color:#d6d6d6;transition:color .2s,padding .3s}
+footer li a:hover{color:var(--gold);padding-left:8px}
+.copy{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:60px;padding-top:26px;color:var(--muted);font-size:.85rem}
+@media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+
+.wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.5);z-index:45}
+.wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:onda 2.4s infinite}
+@keyframes onda{to{transform:scale(1.7);opacity:0}}
+.wa svg{width:28px;fill:#fff}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="none"><path id="lp" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"/></svg>
+  <div class="in" id="lin">
+    <img src="img/logo-letras-brancas.png" alt="">
+    <div class="txt" id="ltxt">Carregando</div>
+  </div>
+</div>
+<div class="cursor" id="cursor"></div>
+
+<!-- logo (monograma KS na moldura oval) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#topo" class="logo" aria-label="Kárita Santana, início">
+      <img src="img/logo-letras-brancas.png" alt="Kárita Santana Assessoria e Perícia">
+    </a>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#areas">Áreas de atuação</a></li>
+      <li><a href="#pericia">Perícia</a></li>
+      <li><a href="#processo">Como funciona</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+    </ul>
+    <a class="butn sm" href="#contato">Fale comigo</a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><i></i><i></i></button>
+  </div>
+</nav>
+<div class="menu" id="menu">
+  <a href="#sobre">Sobre</a><a href="#areas">Áreas de atuação</a><a href="#pericia">Perícia</a><a href="#processo">Como funciona</a><a href="#duvidas">Dúvidas</a><a href="#instagram">Instagram</a><a href="#contato" class="acc">Fale comigo</a>
+</div>
+
+<main id="topo">
+<header class="hero">
+  <div class="hero-photo"><picture><source media="(max-width:900px)" srcset="img/karita-cafe.jpg"><img id="heroImg" src="img/karita-hero.jpg" alt="Kárita Santana"></picture></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hello" data-fade><span class="wave">👋</span> Olá, seja bem-vindo</div>
+      <h1 data-split data-now>Eu sou Kárita <span class="acc">Santana</span></h1>
+      <h3 data-split data-now>Assessoria e perícia judicial e extrajudicial</h3>
+      <p data-fade>Contabilidade, economia e direito juntos para revisar contratos, cobranças e cálculos, com laudos claros e sem juridiquês.</p>
+      <div class="row" data-fade>
+        <a class="butn" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener">Fale comigo</a>
+        <svg class="arrow" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4v46M12 32l20 22 20-22"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="marq" aria-hidden="true"><div class="track" id="mq1"></div></section>
+
+<section class="about pad" id="sobre">
+  <div class="wrap">
+    <div class="frame-wrap" data-fade>
+      <div class="frame"><img src="img/karita-amarelo.jpg" alt="Kárita Santana com uma xícara de café" data-speed loading="lazy"></div>
+      <div class="duo2"><img src="img/karita-palco.jpg" alt="Kárita Santana palestrando" loading="lazy"><img src="img/karita-cafe.jpg" alt="Kárita Santana em uma poltrona" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="sub" data-fade>Sobre mim</span>
+      <h2 class="h2" data-split>Contabilidade, economia e direito <span class="l" style="display:block">na mesma mesa.</span></h2>
+      <p data-fade>Reúno as três áreas para transformar contratos, extratos e processos em informação clara. Atendo pessoas e empresas, e também advogados que precisam de um laudo técnico para sustentar a tese.</p>
+      <blockquote data-fade>“Eu faço como se fosse pra mim.”</blockquote>
+      <div class="stats" data-fade>
+        <div><b data-count="3">0</b><span>Saberes integrados</span></div>
+        <div><b data-count="4">0</b><span>Áreas do direito</span></div>
+        <div><b data-count="2">0</b><span>Frentes de perícia</span></div>
+      </div>
+      <a class="butn" href="#areas" data-fade>Ver áreas de atuação</a>
+    </div>
+  </div>
+</section>
+
+<section class="areas pad" id="areas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sub" data-fade>O que eu analiso</span>
+        <h2 class="h2" data-split>Áreas de <span class="l">atuação.</span></h2>
+      </div>
+      <a class="butn sm" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener" data-fade>Falar sobre o meu caso</a>
+    </div>
+
+    <div class="stack" id="stack">
+      <article class="wc" style="--i:0"><div class="wc-in">
+        <div>
+          <div class="tags"><span>Contratos</span><span>Juros</span><span>Financiamentos</span></div>
+          <h3>Direito bancário</h3>
+          <p>Contratos de crédito cheios de cálculo escondido. Confiro se o que foi cobrado é o que foi pactuado.</p>
+          <ul><li>Juros e tarifas do contrato</li><li>Empréstimos e financiamentos</li><li>Cartão de crédito e cheque especial</li></ul>
+          <a class="more" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20falar%20sobre%20Direito%20Banc%C3%A1rio" target="_blank" rel="noopener">Ver detalhes <i>↗</i></a>
+        </div>
+        <div class="vis"><svg viewBox="0 0 120 120"><path d="M10 44L60 14l50 30zM18 44v8h84v-8M24 56v36M44 56v36M64 56v36M84 56v36M96 56v36M14 100h92M8 110h104"/></svg></div>
+      </div></article>
+
+      <article class="wc" style="--i:1"><div class="wc-in">
+        <div>
+          <div class="tags"><span>Cobranças</span><span>Serviços</span><span>Revisão</span></div>
+          <h3>Consumidor</h3>
+          <p>Cobranças que você não reconhece e serviços que não foram entregues como prometido.</p>
+          <ul><li>Cobranças indevidas</li><li>Revisão de valores pagos</li><li>Práticas abusivas</li></ul>
+          <a class="more" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20falar%20sobre%20Direito%20do%20Consumidor" target="_blank" rel="noopener">Ver detalhes <i>↗</i></a>
+        </div>
+        <div class="vis"><svg viewBox="0 0 120 120"><path d="M60 8l40 16v30c0 28-17 46-40 58-23-12-40-30-40-58V24z"/><path d="M42 60l13 13 25-27"/></svg></div>
+      </div></article>
+
+      <article class="wc" style="--i:2"><div class="wc-in">
+        <div>
+          <div class="tags"><span>Apuração</span><span>Obrigações</span><span>Perícia</span></div>
+          <h3>Civil</h3>
+          <p>Disputas em que o valor devido precisa ser calculado e comprovado com método.</p>
+          <ul><li>Apuração de haveres e valores</li><li>Contratos e obrigações</li><li>Atualização de débitos</li></ul>
+          <a class="more" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20falar%20sobre%20Direito%20Civil" target="_blank" rel="noopener">Ver detalhes <i>↗</i></a>
+        </div>
+        <div class="vis"><svg viewBox="0 0 120 120"><path d="M60 12v90M36 102h48M18 28h84M18 28L6 62a12 12 0 0 0 24 0zM102 28L90 62a12 12 0 0 0 24 0z"/></svg></div>
+      </div></article>
+
+      <article class="wc" style="--i:3"><div class="wc-in">
+        <div>
+          <div class="tags"><span>Verbas</span><span>Cálculos</span><span>Processo</span></div>
+          <h3>Trabalho</h3>
+          <p>Cálculo e conferência de verbas para dar base técnica a pedidos e defesas.</p>
+          <ul><li>Verbas rescisórias</li><li>Horas extras e reflexos</li><li>Conferência de cálculos do processo</li></ul>
+          <a class="more" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20falar%20sobre%20Direito%20do%20Trabalho" target="_blank" rel="noopener">Ver detalhes <i>↗</i></a>
+        </div>
+        <div class="vis"><svg viewBox="0 0 120 120"><rect x="12" y="36" width="96" height="66" rx="8"/><path d="M42 36V24a6 6 0 0 1 6-6h24a6 6 0 0 1 6 6v12M12 68h96M54 68v10h12V68"/></svg></div>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="pericia">
+  <div class="wrap">
+    <span class="sub" data-fade>Perícia</span>
+    <h2 class="h2" data-split>Qual o seu <span class="l">papel no processo?</span></h2>
+    <p class="muted" data-fade style="margin-top:20px;max-width:58ch">Cada situação pede um tipo de trabalho. Eu explico qual faz sentido para o seu caso e o que esperar de cada um.</p>
+    <div class="roles">
+      <div class="role" data-fade><small>Nomeado pelo juiz</small><h3>Perito judicial</h3><p>Faz o laudo técnico e neutro que ajuda o juiz a decidir, respondendo às perguntas (quesitos) do juízo e das partes.</p></div>
+      <div class="role" data-fade><small>Contratado pela parte</small><h3>Assistente técnico</h3><p>Acompanha a perícia e emite um parecer fundamentado, que dá base técnica à tese de quem o contratou.</p></div>
+      <div class="role" data-fade><small>Antes do processo</small><h3>Perícia extrajudicial</h3><p>Análise prévia do contrato e dos cálculos para você saber se há diferença a recuperar e se vale a pena negociar ou processar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="need pad" id="quando">
+  <div class="wrap">
+    <div>
+      <span class="sub" data-fade>Quando buscar</span>
+      <h2 class="h2" data-split>Sinais de que vale <span class="l">uma análise.</span></h2>
+      <ul class="checks">
+        <li data-fade>As parcelas cobradas não batem com o que foi contratado</li>
+        <li data-fade>Juros ou tarifas que parecem abusivos</li>
+        <li data-fade>Uma cobrança que você não reconhece</li>
+        <li data-fade>Verbas trabalhistas ou horas extras para conferir</li>
+        <li data-fade>Disputa entre sócios ou apuração de haveres</li>
+        <li data-fade>Processo em andamento que precisa de laudo ou parecer técnico</li>
+      </ul>
+    </div>
+    <div class="docs" data-fade>
+      <h3>O que separar para começar</h3>
+      <p>Se não tiver tudo, comece mesmo assim. Eu digo o que falta.</p>
+      <ul>
+        <li>Contrato <span>Essencial</span></li>
+        <li>Extratos e comprovantes de pagamento <span>Essencial</span></li>
+        <li>Boletos e cobranças recebidas <span>Se tiver</span></li>
+        <li>Peças do processo <span>Se houver</span></li>
+      </ul>
+      <a class="butn fill" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20enviar%20os%20documentos%20do%20meu%20caso" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="processo">
+  <div class="wrap">
+    <span class="sub" data-fade>Atendimento</span>
+    <h2 class="h2" data-split>Como <span class="l">funciona.</span></h2>
+    <div class="steps-top">
+      <div class="step"><span class="n">01</span><h3>Você conta o caso</h3><p>Pelo WhatsApp, em poucas linhas e sem compromisso.<i class="ln"></i></p></div>
+      <div class="step"><span class="n">02</span><h3>Eu analiso os documentos</h3><p>Contratos, extratos e peças do processo são examinados com rigor técnico.<i class="ln"></i></p></div>
+      <div class="step"><span class="n">03</span><h3>Apuro os valores</h3><p>Os cálculos viram uma planilha e um parecer ou laudo claro.<i class="ln"></i></p></div>
+      <div class="step"><span class="n">04</span><h3>Você decide com clareza</h3><p>Fica claro o que é devido e quais são os próximos passos possíveis.<i class="ln"></i></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="respo pad" id="online">
+  <div class="wrap">
+    <div class="devices" aria-hidden="true">
+      <div class="dev d1"><div class="tablet"><div class="scr"><div class="pad2">
+        <img class="lg" src="img/logo-letras-brancas.png" alt="">
+        <small>O que eu analiso</small>
+        <h4>Áreas de <b>atuação.</b></h4>
+        <div class="mini">
+          <div><i></i><b>Direito bancário</b><span>Juros, tarifas e financiamentos</span></div>
+          <div><i></i><b>Consumidor</b><span>Cobranças indevidas e abusivas</span></div>
+          <div><i></i><b>Civil</b><span>Apuração de valores e obrigações</span></div>
+          <div><i></i><b>Trabalho</b><span>Verbas e cálculos do processo</span></div>
+        </div>
+      </div></div></div></div>
+      <div class="dev d2"><div class="phone"><div class="scr"><div class="pad2">
+        <img class="lg" src="img/logo-letras-brancas.png" alt="">
+        <small>@kspericia</small>
+        <h4>Direto do <b>Instagram.</b></h4>
+        <div class="feed">
+          <div><img src="img/p-oct15.jpg" alt="" loading="lazy"><b>Café Contábil com elas</b></div>
+          <div><img src="img/p-oct03.jpg" alt="" loading="lazy"><b>Outubro Rosa</b></div>
+        </div>
+      </div></div></div></div>
+    </div>
+    <div>
+      <span class="sub" data-fade>Atendimento online</span>
+      <h2 class="h2" data-split><b>Seu caso</b> <span class="l">no celular,</span> <b>quando e onde</b> <span class="l">você quiser.</span></h2>
+      <p data-fade>Envie os documentos pelo WhatsApp e acompanhe a análise pelo mesmo canal. O site também se ajusta a qualquer tela, do computador ao celular.</p>
+      <a class="more acc" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener" data-fade>Chamar no WhatsApp <i>↗</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="duvidas">
+  <div class="wrap">
+    <span class="sub" data-fade>Dúvidas</span>
+    <h2 class="h2" data-split>Perguntas <span class="l">frequentes.</span></h2>
+    <div class="docket faq">
+      <details open class="rv"><summary>A perícia serve só para quem já tem processo?</summary><div class="body"><p>Não. A perícia extrajudicial é feita antes de qualquer ação, para avaliar se há diferença a recuperar e se compensa negociar ou processar.</p></div></details>
+      <details class="rv"><summary>Qual a diferença entre perito e assistente técnico?</summary><div class="body"><p>O perito é nomeado pelo juiz e produz um laudo neutro. O assistente técnico é contratado por uma das partes e emite um parecer que apoia a tese dela.</p></div></details>
+      <details class="rv"><summary>Quanto custa?</summary><div class="body"><p>Depende do tipo de trabalho, da quantidade de documentos e do prazo. Conte o seu caso pelo WhatsApp para saber o valor antes de começar.</p></div></details>
+      <details class="rv"><summary>Em quanto tempo sai o laudo ou o parecer?</summary><div class="body"><p>O prazo depende do volume de documentos e, em processos, dos prazos do juízo. Ele é combinado com você antes de começar.</p></div></details>
+      <details class="rv"><summary>Posso enviar os documentos pelo WhatsApp?</summary><div class="body"><p>Sim, pelo mesmo canal da conversa. Envie só o que for necessário para a análise do caso.</p></div></details>
+      <details class="rv"><summary>Você atende advogados?</summary><div class="body"><p>Sim. Atendo pessoas, empresas e advogados que precisam de suporte técnico em contabilidade, economia e cálculos.</p></div></details>
+      <details class="rv"><summary>Meus dados ficam seguros?</summary><div class="body"><p>Os dados são usados apenas para analisar o seu caso. Veja os detalhes na <a href="politicas.html#privacidade" style="color:var(--gold)">política de privacidade</a>.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="insta pad" id="instagram">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="sub" data-fade>@kspericia</span>
+        <h2 class="h2" data-split>Direto do <span class="l">Instagram.</span></h2>
+      </div>
+      <a class="butn sm" href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener" data-fade>Ver perfil</a>
+    </div>
+    <div class="cards">
+      <a class="post" href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener" data-fade>
+        <div class="img"><img src="img/p-oct15.jpg" alt="Kárita no Café Contábil com elas, CRCGO" loading="lazy"><span class="tag">Evento</span></div>
+        <small>15 de outubro de 2026</small>
+        <h3>Café Contábil com elas, no CRCGO</h3>
+        <p>Participação na 5ª edição do encontro, com o tema “Do legado ao cuidado”.</p>
+      </a>
+      <a class="post" href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener" data-fade>
+        <div class="img"><img src="img/p-oct03.jpg" alt="Arte do Outubro Rosa com Kárita Santana" loading="lazy"><span class="tag">Saúde</span></div>
+        <small>3 de outubro de 2026</small>
+        <h3>Outubro Rosa: prevenção é um ato de amor</h3>
+        <p>Previna-se, faça seus exames e cuide-se sempre. A sua saúde também importa.</p>
+      </a>
+      <a class="post" href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener" data-fade>
+        <div class="img"><img src="img/p-aug06.jpg" alt="Arte com o logo e a frase do atendimento" loading="lazy"><span class="tag">Vídeo</span></div>
+        <small>6 de agosto de 2026</small>
+        <h3>“Eu faço como se fosse pra mim”</h3>
+        <p>O jeito de atender: cada caso analisado com o mesmo cuidado de um caso próprio.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="call" id="contato">
+  <div class="rows">
+    <div class="row-m"><div class="track" id="mq2"></div></div>
+  </div>
+  <div class="wrap">
+    <p class="muted" style="margin-bottom:28px" data-fade>Resposta pelo WhatsApp, (62) 99397-4884.</p>
+    <div class="cta" data-fade>
+      <a class="butn fill" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="butn" href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener">Ver o Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img class="flogo" src="img/logo-letras-brancas.png" alt="Kárita Santana Assessoria e Perícia">
+        <p class="muted" style="margin-top:20px;max-width:34ch">Contabilidade, economia e direito para revisar contratos, cobranças e cálculos.</p>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul><li><a href="#sobre">Sobre</a></li><li><a href="#areas">Áreas de atuação</a></li><li><a href="#pericia">Perícia</a></li><li><a href="#processo">Como funciona</a></li><li><a href="#duvidas">Dúvidas</a></li><li><a href="#instagram">Instagram</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener">WhatsApp (62) 99397-4884</a></li><li><a href="https://www.instagram.com/kspericia/" target="_blank" rel="noopener">@kspericia</a></li></ul>
+      </div>
+      <div>
+        <h4>Políticas</h4>
+        <ul><li><a href="politicas.html#privacidade">Política de privacidade</a></li><li><a href="politicas.html#termos">Termos de uso</a></li><li><a href="politicas.html#cookies">Política de cookies</a></li></ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="y"></span> Kárita Santana Assessoria e Perícia</span><span>Feito por <a class="yra" href="https://yrastudios.com.br" target="_blank" rel="noopener">Yra Studios</a></span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5562993974884?text=Ol%C3%A1!%20Quero%20saber%20mais" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.400-2A13 13 0 1 0 16 3zm0 23.700a10.600 10.600 0 0 1-5.400-1.500l-.4-.2-3.800 1.200 1.200-3.700-.3-.4A10.700 10.700 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-1-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7 0a8.700 8.700 0 0 1-4.300-3.800c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.3-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.800 3.800 0 0 0-1.200 2.800 6.600 6.600 0 0 0 1.400 3.500 15 15 0 0 0 5.800 5.100c2.100.9 2.900.9 3.400.8a3 3 0 0 0 2-1.400 2.500 2.500 0 0 0 .2-1.400c-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+$('#y').textContent=new Date().getFullYear();
+
+// faixas: conteúdo duplicado para o loop fechar (funciona mesmo sem GSAP)
+const faixa=itens=>{const h=itens.map(t=>`<span>${t}</span><i></i>`).join('');return h+h};
+$('#mq1').innerHTML=faixa(['Perícia Judicial','Perícia Extrajudicial','Direito Bancário','Consumidor','Civil','Trabalho','Contabilidade','Economia']);
+const mq2=['Fale comigo','Fale comigo'].map((t,i)=>`<span class="big ${i%2?'s':''}">${t}</span><i class="d"></i>`).join('');
+$('#mq2').innerHTML=mq2+mq2+mq2+mq2;
+
+// menu e cabeçalho
+const nav=$('#nav');
+addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>30),{passive:true});
+$('#burger').onclick=()=>document.body.classList.toggle('menu-open');
+$$('#menu a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu-open')));
+
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!window.gsap||calm){
+  $$('[data-count]').forEach(c=>c.textContent=c.dataset.count);
+  document.documentElement.classList.remove('ld');
+} else {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // abertura: letras pulsam, depois a cortina sobe com borda curva
+  const L=2.1;
+  $('#ltxt').innerHTML=[...'Carregando'].map((c,i)=>`<span style="animation-delay:${i*.1}s">${c}</span>`).join('');
+  gsap.timeline({onComplete:()=>{document.documentElement.classList.remove('ld');$('#loader').remove()}})
+    .to('#lin',{opacity:0,y:-24,duration:.5},1.4)
+    .to('#lp',{attr:{d:'M0,1005S175,900,500,900s500,105,500,105V0H0Z'},duration:.5,ease:'power2.in'},1.6)
+    .to('#lp',{attr:{d:'M0,0S175,-60,500,-60s500,60,500,60V0H0Z'},duration:.7,ease:'power3.out'},2.1);
+
+  // rolagem suave
+  if(window.Lenis){
+    const lenis=new Lenis({lerp:.09});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+    $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');const t=id.length>1&&$(id);
+      if(t){e.preventDefault();lenis.scrollTo(t,{offset:-60,duration:1.4})}
+    }));
+  }
+
+  // palavras que sobem (efeito do tema: rotate-text)
+  function split(el){
+    (function walk(n){
+      [...n.childNodes].forEach(c=>{
+        if(c.nodeType===3){
+          const f=document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(p=>{
+            if(!p.trim()){f.append(p);return}
+            const w=document.createElement('span');w.className='w';
+            w.innerHTML='<span class="i"></span>';w.firstChild.textContent=p;f.append(w);
+          });
+          c.replaceWith(f);
+        } else if(c.nodeType===1) walk(c);
+      });
+    })(el);
+  }
+  $$('[data-split]').forEach(el=>{
+    split(el);
+    const words=$$('.i',el);
+    const cfg={yPercent:115,rotate:7,duration:1,ease:'power4.out',stagger:.07};
+    if(el.hasAttribute('data-now')) gsap.from(words,{...cfg,delay:.2+L});
+    else gsap.from(words,{...cfg,scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+
+  // entradas suaves
+  $$('[data-fade]').forEach(el=>{
+    const hero=!!el.closest('.hero');
+    gsap.from(el,{y:40,opacity:0,duration:1,ease:'power3.out',delay:hero?.7+L:0,
+      ...(hero?{}:{scrollTrigger:{trigger:el,start:'top 90%',once:true}})});
+  });
+
+  // foto do hero: revela e acompanha o mouse
+  gsap.from('#heroImg',{opacity:0,scale:1.15,duration:1.8,delay:L,ease:'power3.out'});
+  // aparelhos flutuam em sentidos opostos ao rolar
+  gsap.to('.d1',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.respo',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.to('.d2',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.respo',start:'top bottom',end:'bottom top',scrub:true}});
+  const hi=gsap.quickTo('#heroImg','x',{duration:1.2,ease:'power3'});
+  addEventListener('pointermove',e=>hi((e.clientX/innerWidth-.5)*-24));
+  gsap.to('.hero-photo',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  // parallax nas imagens
+  $$('[data-speed]').forEach(img=>gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}}));
+
+  // faixas que correm e aceleram com a rolagem
+  const m1=gsap.to('#mq1',{xPercent:-50,duration:40,ease:'none',repeat:-1});
+  gsap.set('#mq2',{xPercent:-50});
+  const m2=gsap.to('#mq2',{xPercent:0,duration:50,ease:'none',repeat:-1});
+  ScrollTrigger.create({onUpdate:s=>{
+    const v=Math.min(Math.abs(s.getVelocity())/400,6);
+    gsap.to([m1,m2],{timeScale:1+v,duration:.2,overwrite:true});
+    gsap.to([m1,m2],{timeScale:1,duration:1,delay:.2});
+  }});
+
+  // números
+  $$('[data-count]').forEach(el=>{
+    const o={v:0};
+    gsap.to(o,{v:+el.dataset.count,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%',once:true},onUpdate:()=>el.textContent=Math.round(o.v)});
+  });
+
+  // cards empilhados: o de baixo cobre o de cima, que recua
+  const wcs=$$('.wc-in');
+  if(innerWidth<=860) wcs.forEach(c=>gsap.from(c,{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 88%',once:true}}));
+  if(innerWidth>860) wcs.forEach((c,i)=>{
+    if(i===wcs.length-1)return;
+    gsap.to(c,{scale:.92,opacity:.45,ease:'none',scrollTrigger:{trigger:wcs[i+1].parentElement,start:'top 85%',end:'top 140px',scrub:true}});
+  });
+
+  // linhas do processo
+  $$('.step').forEach(s=>{
+    gsap.from($('.ln',s),{scaleX:0,transformOrigin:'left',ease:'none',scrollTrigger:{trigger:s,start:'top 80%',end:'bottom 65%',scrub:true}});
+    gsap.from($$('.n,h3,p',s).filter(e=>!e.closest('.ln')),{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out',scrollTrigger:{trigger:s,start:'top 85%',once:true}});
+  });
+
+  // cartões do Instagram: imagem revela de baixo
+  $$('.post .img img').forEach(img=>gsap.from(img,{scale:1.25,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:img,start:'top 90%',once:true}}));
+
+  // cursor
+  const cur=$('#cursor');
+  if(getComputedStyle(cur).display!=='none'){
+    const qx=gsap.quickTo(cur,'x',{duration:.25,ease:'power3'}),qy=gsap.quickTo(cur,'y',{duration:.25,ease:'power3'});
+    addEventListener('pointermove',e=>{qx(e.clientX);qy(e.clientY)});
+    $$('a,button').forEach(a=>{a.addEventListener('pointerenter',()=>cur.classList.add('big'));a.addEventListener('pointerleave',()=>cur.classList.remove('big'))});
+  }
+}
+</script>
+</body>
+</html>
