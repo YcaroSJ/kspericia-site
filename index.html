@@ -157,7 +157,7 @@ section{position:relative}
 .vis::after{content:"";position:absolute;width:140%;aspect-ratio:1;border:1px solid rgba(255,255,255,.08);border-radius:50%;animation:gira 40s linear infinite}
 .vis::before{content:"";position:absolute;width:90%;aspect-ratio:1;border:1px dashed rgba(217,164,65,.25);border-radius:50%;animation:gira 28s linear infinite reverse}
 @keyframes gira{to{transform:rotate(360deg)}}
-@media(max-width:860px){.wc{position:relative;top:0}.wc-in{grid-template-columns:1fr;padding:28px}.vis{min-height:220px;order:-1}}
+@media(max-width:860px){.wc{top:calc(76px + var(--i)*12px);margin-bottom:28px}.wc-in{grid-template-columns:1fr;padding:22px;min-height:0;gap:18px}.vis{min-height:140px;order:-1}.wc p{max-width:none}}
 
 /* processo */
 .step{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:30px;align-items:start;padding:44px 0;position:relative}
@@ -711,8 +711,7 @@ if(!window.gsap||calm){
 
   // cards empilhados: o de baixo cobre o de cima, que recua
   const wcs=$$('.wc-in');
-  if(innerWidth<=860) wcs.forEach(c=>gsap.from(c,{y:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 88%',once:true}}));
-  if(innerWidth>860) wcs.forEach((c,i)=>{
+  wcs.forEach((c,i)=>{
     if(i===wcs.length-1)return;
     gsap.to(c,{scale:.92,opacity:.45,ease:'none',scrollTrigger:{trigger:wcs[i+1].parentElement,start:'top 85%',end:'top 140px',scrub:true}});
   });
